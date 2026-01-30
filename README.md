@@ -8,14 +8,14 @@ I built this to learn about RAG and vector databases. You can ask it questions a
 
 ## Papers it knows about
 
-Attention Is All You Need (Transformers)
-BERT
-GPT-3
-RAG paper
-LoRA
-Constitutional AI
-Chain-of-Thought Prompting
-LLaMA
+- Attention Is All You Need (Transformers)
+- BERT
+- GPT-3
+- RAG paper
+- LoRA
+- Constitutional AI
+- Chain-of-Thought Prompting
+- LLaMA
 
 ## How I built it
 
@@ -28,11 +28,11 @@ LLaMA
 
 ## Tech used
 
- Python
-LangChain
-HuggingFace (for embeddings and LLM)
-FAISS (vector database)
-Streamlit (web UI)
+- Python
+- LangChain
+- HuggingFace (for embeddings and LLM)
+- FAISS (vector database)
+- Streamlit (web UI)
 
 ## How to run it
 ```bash
@@ -54,17 +54,17 @@ streamlit run app.py
 
 ## What I learned
 
-How RAG works in practice
-Vector databases and semantic search
-Working with LangChain
-Integrating LLMs into applications
-Building end-to-end AI projects
+- How RAG works in practice
+- Vector databases and semantic search
+- Working with LangChain
+- Integrating LLMs into applications
+- Building end-to-end AI projects
 
 ## Things I'd improve
 
-Use GPT-4 instead of the small local model for better answers
-Make it faster (currently uses CPU, would use GPU or API)
-Add source citations
+- Use GPT-4 instead of the small local model for better answers
+- Make it faster (currently uses CPU, would use GPU or API)
+- Add source citations
 - Deploy it online
 
 Built as part of learning AI engineering after finishing my MSc in Data Science at University of Greenwich.

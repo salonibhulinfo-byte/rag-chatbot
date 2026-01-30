@@ -1,111 +1,70 @@
-# AI Research Paper RAG Chatbot
+# AI Research Paper Chatbot
 
-A Retrieval-Augmented Generation (RAG) chatbot that answers questions about AI research papers using vector search and language models.
+A chatbot that answers questions about AI research papers using RAG (Retrieval-Augmented Generation).
 
-## 🎯 Project Overview
+## What it does
 
-This chatbot demonstrates modern AI engineering techniques by combining:
-- **Document Processing**: Loads and chunks academic PDFs
-- **Vector Embeddings**: Converts text into searchable embeddings
-- **Semantic Search**: Uses FAISS for efficient similarity search
-- **LLM Integration**: Generates answers using retrieved context
+I built this to learn about RAG and vector databases. You can ask it questions about AI papers like "What is attention mechanism?" or "How does LoRA work?" and it searches through research papers to give you answers.
 
-## 📚 Research Papers Included
+## Papers it knows about
 
 Attention Is All You Need (Transformers)
-BERT: Pre-training of Deep Bidirectional Transformers
-GPT-3: Language Models are Few-Shot Learners
-RAG: Retrieval-Augmented Generation
-LoRA: Low-Rank Adaptation
+BERT
+GPT-3
+RAG paper
+LoRA
 Constitutional AI
 Chain-of-Thought Prompting
-LLaMA and more...
+LLaMA
 
-## 🛠️ Tech Stack
+## How I built it
 
-- **LangChain**: RAG orchestration framework
-- **HuggingFace**: Embeddings and language models
-- **FAISS**: Vector database for similarity search
-- **Streamlit**: Web interface
-- **PyPDF**: PDF processing
+1. Loaded 9 AI research papers (PDFs)
+2. Split them into smaller chunks
+3. Converted chunks into embeddings using sentence-transformers
+4. Stored them in FAISS vector database
+5. Built a RAG chain with LangChain
+6. Added a Streamlit web interface
 
-## 🚀 How to Run
+## Tech used
 
-### Prerequisites
-- Python 3.10+
-- pip
+ Python
+LangChain
+HuggingFace (for embeddings and LLM)
+FAISS (vector database)
+Streamlit (web UI)
 
-### Installation
-
-1. Clone the repository:
+## How to run it
 ```bash
+# Clone and setup
 git clone https://github.com/salonibhulinfo-byte/rag-chatbot.git
 cd rag-chatbot
-```
-
-2. Create virtual environment:
-```bash
 python -m venv venv
-venv\Scripts\activate  # Windows
-# source venv/bin/activate  # Mac/Linux
-```
+venv\Scripts\activate
 
-3. Install dependencies:
-```bash
+# Install packages
 pip install -r requirements.txt
-```
 
-4. Build the vector store (first time only):
-```bash
+# Build vector database (first time only)
 python build_vectorstore.py
-```
 
-5. Run the chatbot:
-```bash
+# Run the chatbot
 streamlit run app.py
 ```
 
-## 💡 How It Works
+## What I learned
 
-1. **Document Loading**: PDFs are loaded and split into chunks
-2. **Embedding Creation**: Each chunk is converted to a vector using sentence-transformers
-3. **Vector Storage**: Embeddings stored in FAISS for fast retrieval
-4. **Query Processing**: User questions are embedded and matched against stored vectors
-5. **Context Retrieval**: Top 3 most relevant chunks are retrieved
-6. **Answer Generation**: LLM generates answer based on retrieved context
+How RAG works in practice
+Vector databases and semantic search
+Working with LangChain
+Integrating LLMs into applications
+Building end-to-end AI projects
 
-## 📊 Project Structure
-```
-rag-chatbot/
-├── data/                    # Research papers (PDFs)
-├── vectorstore/             # FAISS vector database
-├── process_documents.py     # Document loading & chunking
-├── build_vectorstore.py     # Create embeddings & vector store
-├── rag_chain.py            # RAG chain implementation
-├── app.py                  # Streamlit web interface
-├── requirements.txt        # Python dependencies
-└── README.md
-```
+## Things I'd improve
 
-## 🔧 Known Limitations
+Use GPT-4 instead of the small local model for better answers
+Make it faster (currently uses CPU, would use GPU or API)
+Add source citations
+- Deploy it online
 
-- Using flan-t5-small for cost efficiency - responses may be repetitive
-- Local model runs on CPU, so inference is slower (~10-30 seconds per query)
-- For production deployment, would use GPT-4 or Claude for better quality
-
-## 🎓 Learning Outcomes
-
-Built as part of my journey to become an AI Engineer. This project demonstrates:
-- Understanding of RAG architecture
-- Vector database implementation
-- LLM integration and prompt engineering
-- End-to-end ML application development
-
-## 📝 Future Improvements
-
-Integrate GPT-4 API for better answers
-Add citation/source tracking
-Implement conversation memory
-Deploy to Streamlit Cloud
-Add more research papers
-Improve chunk sizing and overlap
+Built as part of learning AI engineering after finishing my MSc in Data Science at University of Greenwich.
